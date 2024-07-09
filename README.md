@@ -1,0 +1,2 @@
+# ZXC-coin
+ZXC-coin
