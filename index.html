@@ -2,27 +2,28 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width = device_width, user_scalable = no, initial-scale=1.0, maximum-scale = 1.0, minimum-scale = 1.0" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <title>Revo</title>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script type="text/javascript" src="jquery.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <style>
          * {
-             box-sizing:border-box;
+             box-sizing: border-box;
          }
 
-         body{
+         body {
              margin: 0;
          }
-        .backgbackground {
+        .background {
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
             position: relative;
+            overflow: hidden;
         }
-        .pon{
+        .pon {
             position: relative;
             z-index: 10;
             color: #fff;
@@ -31,21 +32,20 @@
             font-family: sans-serif;
             font-size: clamp(20px, 10vw, 100px);
         }
-        .background_video{
-            position : absolute;
+        .background_video {
+            position: absolute;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
     </style>
 </head>
 <body>
     <section class="background">
         <h1 class="pon">IDI NAHUY</h1>
-        <video src="ZXC-coin\video\go.mp4" muted autoplay loop class="background_video"></video>
+        <video src="ZXC-coin/video/go.mp4" muted autoplay loop class="background_video"></video>
     </section>
     <script type="text/javascript" src="script.js"></script>
 </body>
