@@ -48,7 +48,7 @@ body {
 .container {
     position: fixed;
     bottom: 20px;
-    left: 50%; 
+    left: 100%; 
     transform: translateX(-50%); 
     z-index: 10;
     color: hsl(0, 0%, 30%);
