@@ -1,30 +1,55 @@
 <!DOCTYPE html>
-<html lang = "ru">
+<html lang="ru">
 <head>
-    <meta charset = "utf-8">
-    <meta name = "viewport" content="width = device-width, user-scalable = no, initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0" />
-    <title>Revo</title>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <title>ZXC</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <script type="text/javascript" src="jquery.js"></script>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+    <link rel="shortcut icon" href="img/icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <section class="background">
-        <video src="video/go.mp4" muted autoplay loop class="background_video"></video>
-        <h1 class="pon">IDI NAHUY</h1>
-    </section>
-    <div class="container">
-        <input hidden="" id="check" name="check" type="checkbox">
-        <label class="toggle" for="check">
-            <div class="toggle__circle"></div>
-        </label>
-        <div class="toggle-text">
-            <span>m</span>
-            <span>e</span>
-            <span>n</span>
-            <span>u</span>
+    <div class="player">
+        <div class="wrapper">
+            <div class="details">
+                <div class="track-art"></div>
+                <div class="track-info">
+                    <div class="track-name">Track Name</div>
+                    <div class="track-artist">Track Artist</div>
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="prev-track" onclick="prevTrack()">
+                    <i class="fa fa-step-backward" title="prev"></i>
+                </div>
+                <div class="playpause-track" onclick="playpauseTrack()">
+                    <i class="fa fa-play-circle" title="play/pause"></i>
+                </div>
+                <div class="next-track" onclick="nextTrack()">
+                    <i class="fa fa-step-forward" title="next"></i>
+                </div>
+            </div>
+            <div class="slider-container">
+                <div class="current-time">00:00</div>
+                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                <div class="total-duration">00:00</div>
+            </div>
+            <div id="wave">
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+            </div>
         </div>
     </div>
-    <script type="text/javascript" src="script.js"></script>
+    <section class="background">
+        <video src="video/go.mp4" muted autoplay loop class="background_video"></video>
+    </section>
 </body>
 </html>
