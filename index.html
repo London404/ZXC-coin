@@ -23,6 +23,9 @@
                 </div>
             </div>
             <div class="buttons">
+                <div class="volume-control" onclick="toggleMute()">
+                    <i class="fa fa-volume-up" id="volume-icon" title="mute/unmute"></i>
+                </div>
                 <div class="prev-track" onclick="prevTrack()">
                     <i class="fa fa-step-backward" title="prev"></i>
                 </div>
@@ -31,6 +34,10 @@
                 </div>
                 <div class="next-track" onclick="nextTrack()">
                     <i class="fa fa-step-forward" title="next"></i>
+                </div>
+
+                <div class="random-repeat" onclick="toggleRandomRepeat()">
+                    <i class="fa fa-random" id="random-repeat-icon" title="random/repeat"></i>
                 </div>
             </div>
             <div class="slider-container">
