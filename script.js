@@ -53,6 +53,7 @@ function loadTrack(track_index) {
     track_art.style.backgroundImage = "url(" + music_list[track_index].img + ")";
     track_name.textContent = music_list[track_index].name;
     track_artist.textContent = music_list[track_index].artist;
+    seek_slider.style.background = 'linear-gradient(to right, red 0%, gray 0%)';
 
     updateTimer = setInterval(setUpdate, 1000);
 
@@ -83,6 +84,8 @@ function reset() {
     curr_time.textContent = "00:00";
     total_duration.textContent = "00:00";
     seek_slider.value = 0;
+
+    seek_slider.style.background = 'linear-gradient(to right, red 0%, gray 0%)';
 }
 
 function randomTrack() {
