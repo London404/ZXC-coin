@@ -204,15 +204,16 @@ seek_slider.addEventListener("input", function () {
 
 seek_slider.addEventListener("change", seekTo);
 
-document.addEventListener('DOMContentLoaded', function () {
-    let balanceElement = document.getElementById('balance');
-    let invokerImage = document.getElementById('invoker-image');
+document.addEventListener("DOMContentLoaded", function() {
+    const balanceElement = document.getElementById("balance");
+    const invokerImage = document.getElementById("invoker-image");
 
-    invokerImage.addEventListener('click', function () {
-        let currentBalance = parseInt(balanceElement.textContent);
-        let incrementValue = 1; // Увеличиваемое значение
-        let newBalance = currentBalance + incrementValue;
+    let balance = 0;
 
-        balanceElement.textContent = newBalance;
+    invokerImage.addEventListener("touchstart", function(event) {
+        const touchPoints = event.touches.length;
+        balance += touchPoints;
+        balanceElement.textContent = balance;
     });
 });
+
