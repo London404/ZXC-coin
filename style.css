@@ -365,7 +365,7 @@ body {
 
 .balance {
     position: absolute; /* Изменено с absolute на fixed */
-    top: 24%; /* отступ от верхнего края в % */
+    top: 26%; /* отступ от верхнего края в % */
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2.5rem;
