@@ -203,3 +203,16 @@ seek_slider.addEventListener("input", function () {
 });
 
 seek_slider.addEventListener("change", seekTo);
+
+document.addEventListener('DOMContentLoaded', function () {
+    let balanceElement = document.getElementById('balance');
+    let invokerImage = document.getElementById('invoker-image');
+
+    invokerImage.addEventListener('click', function () {
+        let currentBalance = parseInt(balanceElement.textContent);
+        let incrementValue = 1; // Увеличиваемое значение
+        let newBalance = currentBalance + incrementValue;
+
+        balanceElement.textContent = newBalance;
+    });
+});
