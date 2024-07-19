@@ -75,7 +75,7 @@ function random_bg_color() {
     }
     let Color1 = populate("#");
     let Color2 = populate("#");
-    var angle = "to right";
+    var angle = "to right"; 
 
     let gradient = "linear-gradient(" + angle + "," + Color1 + "," + Color2 + ")";
     document.body.style.background = gradient;
@@ -157,7 +157,7 @@ function seekTo() {
     let seekto = curr_track.duration * (seek_slider.value / 100);
     curr_track.currentTime = seekto;
 
-    // Обновление фона шкалы времени при перемещении ползунка
+    // ���������� ���� ����� ������� ��� ����������� ��������
     let seekPosition = curr_track.currentTime * (100 / curr_track.duration);
     seek_slider.style.background = `linear-gradient(to right, red ${seekPosition}%, gray ${seekPosition}%)`;
 }
@@ -204,13 +204,13 @@ seek_slider.addEventListener("input", function () {
 
 seek_slider.addEventListener("change", seekTo);
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const balanceElement = document.getElementById("balance");
     const invokerImage = document.getElementById("invoker-image");
 
     let balance = 0;
 
-    invokerImage.addEventListener("touchstart", function(event) {
+    invokerImage.addEventListener("touchstart", function (event) {
         const touchPoints = event.touches.length;
         balance += touchPoints;
         balanceElement.textContent = balance;
