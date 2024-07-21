@@ -216,4 +216,15 @@ document.addEventListener("DOMContentLoaded", function () {
         balanceElement.textContent = balance;
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const hpElement = document.getElementById("hp");
+    const invokerImage = document.getElementById("invoker-image");
 
+    let hp = 1000;
+
+    invokerImage.addEventListener("touchstart", function (event) {
+        const touchPoints = event.touches.length;
+        hp -= touchPoints;
+        hpElement.textContent = hp;
+    });
+});
