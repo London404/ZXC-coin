@@ -600,6 +600,7 @@ body {
     background: #ff0000;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     animation: gradientAnimation 3s infinite alternate;
+    transition: width 0.3s ease-in-out;
 }
   .gradient-line2 {
     border-radius: 10px;
@@ -625,4 +626,16 @@ body {
     font-size: 3.6vw;
     color: #f50000;
     font-weight: bold;
+}
+@media (max-width: 768px) {
+    .hp-box  {
+        font-size: 3.6vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hp-box  {
+        bottom: 11%;
+        font-size: 1.4vw;
+    }
 }
