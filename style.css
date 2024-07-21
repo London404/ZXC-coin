@@ -436,7 +436,6 @@ body {
     background-position: 0;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shine2 80s infinite linear;
     animation-fill-mode: forwards;
     -webkit-text-size-adjust: none;
     text-decoration: none;
@@ -444,61 +443,6 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-@-moz-keyframes shine2 {
-    0% {
-        background-position: 0;
-    }
-
-    60% {
-        background-position: 180px;
-    }
-
-    100% {
-        background-position: 180px;
-    }
-}
-
-@-webkit-keyframes shine2 {
-    0% {
-        background-position: 0;
-    }
-
-    60% {
-        background-position: 180px;
-    }
-
-    100% {
-        background-position: 180px;
-    }
-}
-
-@-o-keyframes shine2 {
-    0% {
-        background-position: 0;
-    }
-
-    60% {
-        background-position: 180px;
-    }
-
-    100% {
-        background-position: 180px;
-    }
-}
-
-@keyframes shine2 {
-    0% {
-        background-position: 0;
-    }
-
-    60% {
-        background-position: 180px;
-    }
-
-    100% {
-        background-position: 180px;
-    }
-}
 
 
 .line {
@@ -564,7 +508,7 @@ body {
     position: absolute;
     width: 100%;
     max-width: 500px;
-    height: 60px;
+    height: 50px;
     background-color: rgb(0, 0, 0);
     border-radius: 40px;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.041);
@@ -583,7 +527,7 @@ body {
   }
   
   .ul .li {
-    margin: 10px;
+    margin: 3px;
     display: inline-block;
   }
   
@@ -615,3 +559,70 @@ body {
   .text-gray-800 {
     color: white;
   }
+  #choose2 + label .svg {
+    fill: white;
+  }
+
+  #choose2:checked + label .li .svg {
+    fill: red;
+  }
+
+  #choose3 + label .svg {
+    fill: white; 
+  }
+
+  #choose3:checked + label .li .svg {
+    fill: red;
+  }
+
+  @media (max-width: 500px) {
+    .ul {
+      justify-content: space-between;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .svg {
+      width: 45px;
+      height: 45px;
+      padding: 3px 11px;
+    }
+  }
+  .gradient-line {
+    transform: translateX(-1%);
+    border-radius: 10px;
+    bottom: 15%;
+    z-index: 15;
+    position: absolute;
+    width: 70%;
+    max-width: 500px;
+    height: 10px; /* Толщина линии */
+    background: #ff0000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: gradientAnimation 3s infinite alternate;
+}
+  .gradient-line2 {
+    border-radius: 10px;
+    align-content: center;
+    bottom: 15%;
+    z-index: 15;
+    position: absolute;
+    transform: translateX(-1%);
+    width: 70%;
+    max-width: 500px;
+    height: 10px; /* Толщина линии */
+    background: gray;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: gradientAnimation 3s infinite alternate;
+}
+
+
+.hp-box {
+    bottom: 12.7%;
+    z-index:8;
+    position: absolute;
+    transform: translateX(150%);
+    font-size: 3.6vw;
+    color: #f50000;
+    font-weight: bold;
+}
