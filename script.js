@@ -219,12 +219,21 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const hpElement = document.getElementById("hp");
     const invokerImage = document.getElementById("invoker-image");
+    const line = document.getElementById('red-line');
 
-    let hp = 1000;
+    const initialHp = 1000; // Начальное значение HP
+    let hp = initialHp;
 
     invokerImage.addEventListener("touchstart", function (event) {
         const touchPoints = event.touches.length;
         hp -= touchPoints;
         hpElement.textContent = hp;
+
+        updateLineWidth(hp);
     });
+
+    function updateLineWidth(hp) {
+        const newWidth = Math.max(0, hp / initialHp); // Убедимся, что newWidth всегда между 0 и 1
+        line.style.transform = `scaleX(${newWidth})`;
+    }
 });
