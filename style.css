@@ -594,13 +594,14 @@ body {
     bottom: 15%;
     z-index: 15;
     position: absolute;
-    width: 70%;
-    max-width: 500px;
-    height: 10px; /* Толщина линии */
+    width: 71%;
+    max-width: 501px;
+    height: 10px; 
     background: #ff0000;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     animation: gradientAnimation 3s infinite alternate;
-    transition: width 0.3s ease-in-out;
+    transition: width 0.5s ease;
+    transform-origin: left;
 }
   .gradient-line2 {
     border-radius: 10px;
