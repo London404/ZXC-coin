@@ -220,9 +220,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const hpElement = document.getElementById("hp");
     const invokerImage = document.getElementById("invoker-image");
     const line = document.getElementById('red-line');
-
-    const initialHp = 1000; // Начальное значение HP
+    const clickSound = document.getElementById('click-sound');
+    const initialHp = 1000; 
     let hp = initialHp;
+    clickSound.volume = 0.3;
+
+    const images = [
+        'img/hitmarker.png',
+        'img/hitmarker2.png',
+        'img/hitmarker3.png'
+    ];
+    let currentImageIndex = 0;
 
     invokerImage.addEventListener("touchstart", function (event) {
         const touchPoints = event.touches.length;
@@ -230,10 +238,43 @@ document.addEventListener("DOMContentLoaded", function () {
         hpElement.textContent = hp;
 
         updateLineWidth(hp);
+
+        const touch = event.touches[0];
+        createClickEffect(touch.clientX, touch.clientY);
+
+        clickSound.currentTime = 0;
+        clickSound.play();
+
+        if (navigator.vibrate) {
+            navigator.vibrate(200);
+        }
     });
 
     function updateLineWidth(hp) {
-        const newWidth = Math.max(0, hp / initialHp); // Убедимся, что newWidth всегда между 0 и 1
+        const newWidth = Math.max(0, hp / initialHp);
         line.style.transform = `scaleX(${newWidth})`;
     }
+
+    function createClickEffect(x, y) {
+        const effect = document.createElement('div');
+        effect.className = 'click-effect';
+        effect.style.backgroundImage = `url(${images[currentImageIndex]})`;
+        effect.style.left = `${x - 10}px`; 
+        effect.style.top = `${y - 10}px`;  
+        document.body.appendChild(effect);
+
+        requestAnimationFrame(() => {
+            effect.classList.add('animate');
+        });
+
+        setTimeout(() => {
+            effect.classList.remove('animate'); 
+            setTimeout(() => {
+                effect.remove(); 
+            }, 1000); 
+        }, 300); 
+
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+    }
 });
+
