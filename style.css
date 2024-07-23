@@ -499,6 +499,29 @@ body {
     border-radius: 0px;
     object-fit: contain;
 }
+#invoker-image:active {
+    transform: scale(0.97); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: width 0.5s ease;
+}
+.click-effect {
+    z-index: 17;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(1);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.click-effect.animate {
+    transform: scale(3);
+    opacity: 1;
+    transition: transform 0.3s, opacity 1s;
+}
 
 #navbody {
     -webkit-tap-highlight-color: transparent;
