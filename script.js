@@ -62,22 +62,9 @@ function loadTrack(track_index) {
 }
 
 function random_bg_color() {
-    let hex = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e"];
-    let a;
+    let Color = "black";
 
-    function populate(a) {
-        for (let i = 0; i < 6; i++) {
-            let x = Math.round(Math.random() * 14);
-            let y = hex[x];
-            a += y;
-        }
-        return a;
-    }
-    let Color1 = populate("#");
-    let Color2 = populate("#");
-    var angle = "to right"; 
-
-    let gradient = "linear-gradient(" + angle + "," + Color1 + "," + Color2 + ")";
+    let gradient = "linear-gradient(" + Color + ")";
     document.body.style.background = gradient;
 }
 function reset() {
@@ -277,4 +264,16 @@ document.addEventListener("DOMContentLoaded", function () {
         currentImageIndex = (currentImageIndex + 1) % images.length;
     }
 });
-
+document.getElementById('form-ui').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var element = document.getElementById('form-ui');
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+  
+    if (username && password) {
+      element.style.display = 'none';
+      document.getElementById('game').classList.remove('hidden');
+    } else {
+      alert('Будь ласка введіть ім`я та пароль!');
+    }
+  });
