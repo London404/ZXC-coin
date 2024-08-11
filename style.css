@@ -377,6 +377,7 @@ body {
     border-radius: 10px;
     padding: 1px;
     background: radial-gradient(circle 230px at 0% 0%, #f60d0d, #9f0000);
+    
 }
 
 .dot {
@@ -498,6 +499,7 @@ body {
     margin: 0 auto;
     border-radius: 0px;
     object-fit: contain;
+    animation: toggle__animation2 10s infinite;
 }
 #invoker-image:active {
     transform: scale(0.97); 
@@ -611,67 +613,16 @@ body {
       padding: 3px 11px;
     }
   }
-  .gradient-line {
-    transform: translateX(-1%);
-    border-radius: 10px;
-    bottom: 13%;
-    z-index: 15;
-    position: absolute;
-    width: 71%;
-    max-width: 501px;
-    height: 10px; 
-    background: #ff0000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    animation: gradientAnimation 3s infinite alternate;
-    transition: width 0.5s ease;
-    transform-origin: left;
-}
-  .gradient-line2 {
-    border-radius: 10px;
-    align-content: center;
-    bottom: 13%;
-    z-index: 15;
-    position: absolute;
-    transform: translateX(-1%);
-    width: 70%;
-    max-width: 500px;
-    height: 10px; /* Толщина линии */
-    background: gray;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    animation: gradientAnimation 3s infinite alternate;
-}
 
-
-.hp-box {
-    bottom: 11%;
-    z-index:8;
-    position: absolute;
-    transform: translateX(150%);
-    font-size: 3.6vw;
-    color: #f50000;
-    font-weight: bold;
-}
-@media (max-width: 768px) {
-    .hp-box  {
-        font-size: 3.5vw;
-    }
-}
-
-@media (min-width: 1200px) {
-    .hp-box  {
-        bottom: 11%;
-        font-size: 1.4vw;
-    }
-}
 
 #form {
     overflow: hidden;
     top: 20%;
     align-content: center;
+    transform: translateX(-50%);
     bottom: 20%;
     z-index: 15;
     position: absolute;
-    transform: translateX(-50%);
     width: 70%;
     max-width: 800px;
     display: grid;
@@ -811,12 +762,123 @@ body {
   #bar:after {
     right: -38px;
   }
+
+  .game{
+    display: none;
+}
+.player{
+    display: none;
+}
+/* The switch - the box around the slider */
+.switch {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    align-content: center;
+    
+    bottom: 15%;
+    z-index: 15;
+    position: absolute;
+    width: 90%;
+    max-width: 500px;
+    height: 25px; 
+    transition: width 0.5s ease;
+    transform-origin: left;
+    font-size: 20px;
+    display: inline-block;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    animation: toggle__animation 3s infinite;
+  }
   
-  .hidden {
+  .switch::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    filter: blur(20px);
+    z-index: -1;
+    border-radius: 50px;
+    background-color: red;
+    background-image: radial-gradient(at 21% 46%, hsla(1,65%,60%,1) 0px, transparent 50%),
+  radial-gradient(at 23% 25%, hsla(74%,70%,1) 0px, transparent 50%),
+  radial-gradient(at 20% 1%, hsla(267,83%,75%,1) 0px, transparent 50%),
+  radial-gradient(at 86% 87%, hsla(204,69%,68%,1) 0px, transparent 50%),
+  radial-gradient(at 99% 41%, hsla(171,72%,77%,1) 0px, transparent 50%),
+  radial-gradient(at 55% 24%, hsla(138,60%,62%,1) 0px, transparent 50%);
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fdfefedc;
+    transition: .4s;
+    border-radius: 30px;
+    overflow: hidden;
+  }
+  .slider:before {
+    transform: var(--slider-transform, translateX(-1%));
+    position: absolute;
+    content: "";
+    width: 101%;
+    max-width: 500px;
+    height: 26px; 
+    bottom: -0.05em;
+    transition: .4s;
+    transition: width 0.5s ease;
+    transform-origin: left;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -10px 10px 0px inset,
+       rgba(0, 0, 0, 0.09) 0px -1px 15px -8px;
+    background-color: red;
+    background-image: radial-gradient(at 81% 39%, hsla(327,79%,79%,1) 0px, transparent 50%),
+    radial-gradient(at 11% 72%, hsla(264,64%,79%,1) 0px, transparent 50%),
+    radial-gradient(at 23% 20%, hsla(75,98%,71%,1) 0px, transparent 50%);
+  }   
+  .hp-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: rgb(178 55 55);
+    pointer-events: none; 
+    z-index: 1;
+    
+}
+  @keyframes toggle__animation {
+    0%, 100% {
+      transform: translateY(-20px) rotateX(5deg) rotateY(0deg);
+    }
+  
+    50% {
+      transform: translateY(0px) rotateX(5deg) rotateY(0deg);
+    }
+  }
+
+  .switch{
     display: none;
   }
+  @keyframes toggle__animation2 {
+    0%, 100% {
+      transform: translateY(-10px) rotateX(5deg) rotateY(0deg);
+    }
   
-  .visible {
-    display: block;
+    50% {
+      transform: translateY(0px) rotateX(5deg) rotateY(0deg);
+    }
   }
-  
+  .switch{
+    display: none;
+  }
