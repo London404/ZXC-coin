@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const hpElement = document.getElementById("hp");
     const invokerImage = document.getElementById("invoker-image");
-    const line = document.getElementById('red-line');
+    const slider = document.querySelector('.slider');
     const clickSound = document.getElementById('click-sound');
     const initialHp = 1000; 
     let hp = initialHp;
@@ -239,7 +239,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateLineWidth(hp) {
         const newWidth = Math.max(0, hp / initialHp);
-        line.style.transform = `scaleX(${newWidth})`;
+        
+        slider.style.setProperty('--slider-transform', `scaleX(${newWidth})`);
     }
 
     function createClickEffect(x, y) {
@@ -266,13 +267,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 document.getElementById('form-ui').addEventListener('submit', function(e) {
     e.preventDefault();
+    var element2 = document.getElementById("game");
+    var element3 = document.getElementById("player");
+    var element4 = document.getElementById("switch");
     var element = document.getElementById('form-ui');
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
   
     if (username && password) {
       element.style.display = 'none';
-      document.getElementById('game').classList.remove('hidden');
+      element2.style.display = 'flex';
+      element3.style.display = 'flex';
+      element4.style.display = 'inline-block';
+
     } else {
       alert('Будь ласка введіть ім`я та пароль!');
     }
