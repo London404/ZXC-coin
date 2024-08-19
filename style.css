@@ -883,3 +883,134 @@ radial-gradient(at 55% 24%, hsla(138,60%,62%,1) 0px, transparent 50%);
 .switch{
   display: none;
 }
+
+.testbackground{
+  position: absolute;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  top: -15px;
+}
+
+.Tasks {
+  --bg-color: black;
+  background-color: var(--bg-color);
+  padding: 1rem 2rem;
+  border-radius: 1.25rem;
+  position: absolute;
+  margin-top: 200px;
+  left: -20px;
+}
+.loaderss {
+  color: White;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 40px;
+  padding: 10px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 8px;
+}
+
+.words {
+  overflow: hidden;
+  position: relative;
+}
+.words::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    var(--bg-color) 10%,
+    transparent 30%,
+    transparent 70%,
+    var(--bg-color) 90%
+  );
+  z-index: 20;
+}
+
+.word {
+  display: block;
+  height: 100%;
+  padding-left: 6px;
+  color: red;
+  animation: spin_4991 4s infinite;
+}
+
+@keyframes spin_4991 {
+  10% {
+    -webkit-transform: translateY(-102%);
+    transform: translateY(-102%);
+  }
+
+  25% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+
+  35% {
+    -webkit-transform: translateY(-202%);
+    transform: translateY(-202%);
+  }
+
+  50% {
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%);
+  }
+
+  60% {
+    -webkit-transform: translateY(-302%);
+    transform: translateY(-302%);
+  }
+
+  75% {
+    -webkit-transform: translateY(-300%);
+    transform: translateY(-300%);
+  }
+
+  85% {
+    -webkit-transform: translateY(-402%);
+    transform: translateY(-402%);
+  }
+
+  100% {
+    -webkit-transform: translateY(-400%);
+    transform: translateY(-400%);
+  }
+}
+@media (max-width: 1500px){
+  .Tasks{
+    font-size: 2rem;
+    margin-top: 270px;
+  }
+}
+@media (max-width: 1000px){
+  .Tasks{
+    font-size: 2rem;
+    margin-top: 230px;
+  }
+}
+@media (max-width: 400px){
+  .Tasks{
+    font-size: 1.5rem;
+    margin-top: 190px;
+  }
+}
+@media (max-width: 350px){
+  .Tasks{
+    font-size: 1.2rem;
+    margin-top: 150px;
+  }
+}
+@media (max-width: 250px){
+  .Tasks{
+    font-size: 1rem;
+    margin-top: 100px;
+  }
+}
+
+
